@@ -9,7 +9,7 @@ class StringSpec extends AnyFunSuite {
   }
 
   test("Chaine ") {
-    
+
   }
 
 }

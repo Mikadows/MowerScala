@@ -1,10 +1,12 @@
 package progfun
 
-object Main extends App {
-  println("Ici le programme principal")
-  // Le code suivant ne compilera pas.
-  // var tmp = null;
-  // var tmp2 = if (tmp == 1) "yes" else 1
+import progfun.io.{ConfLoader, ConfParser}
 
-  // println(s"tmp: $tmp, tmp2: $tmp2")
+object Main extends App {
+  println("Mower program")
+  // Load configuration
+  val config = ConfLoader.load("./config.txt")
+  // Get Land from configuration
+  val land = ConfParser.getLand(config)
+  println(land)
 }
