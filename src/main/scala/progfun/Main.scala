@@ -18,7 +18,8 @@ object Main extends App {
   mowers.foreach(m => println(m.toString))
 
   // Run mowers
-  println(mowers.map(mower => mower.run))
+  val movedMowers = mowers.map(mower => mower.run)
+  println(movedMowers)
 
 
 }

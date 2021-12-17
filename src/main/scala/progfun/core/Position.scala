@@ -39,12 +39,17 @@ case class Position (x: Int, y: Int, direction: Char) {
    * @param land Land where the mower is.
    * @return New position of the mower.
    */
-  def move: Position = {
-    this.direction match {
+  def move(land: Land): Position = {
+    val newPosition = this.direction match {
       case 'N' => Position(this.x, this.y + 1, this.direction)
       case 'E' => Position(this.x + 1, this.y, this.direction)
       case 'S' => Position(this.x, this.y - 1, this.direction)
       case 'W' => Position(this.x - 1, this.y, this.direction)
+    }
+    if (land.isValidPosition(newPosition)) {
+      newPosition
+    } else {
+      this
     }
   }
 }

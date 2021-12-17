@@ -14,7 +14,7 @@ case class Mower (
   }
 
   def doAction(action: Char): Position = action match {
-      case 'A' => this.position.move
+      case 'A' => this.position.move(this.land)
       case 'G' | 'D' => this.position.turn(action)
     }
 
