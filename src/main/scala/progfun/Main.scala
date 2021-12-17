@@ -8,5 +8,6 @@ object Main extends App {
   val config = ConfLoader.load("./config.txt")
   // Get Land from configuration
   val land = ConfParser.getLand(config)
-  println(land)
+  val mowers = ConfParser.getMowers(config, land)
+  mowers.foreach(m => println(m.toString))
 }

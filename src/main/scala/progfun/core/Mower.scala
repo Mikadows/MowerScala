@@ -1,5 +1,10 @@
 package progfun.core
 
-class Mower {
+case class Mower (
+  position: Position,
+  actions: List[Char],
+  land: Land
+) {
+
 
 }
