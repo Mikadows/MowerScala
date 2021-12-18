@@ -24,5 +24,5 @@ object Main extends App {
   // Build json
   val json = JsonWriter.toJson(land, mowers, movedMowers)
   println(json)
-  FileWriter.write( "./mowers.json", json)
+  FileWriter.write( "./output.json", json)
 }
