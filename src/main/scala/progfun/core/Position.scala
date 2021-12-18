@@ -31,6 +31,7 @@ case class Position (x: Int, y: Int, direction: Char) {
         case 'G' => Position(this.x, this.y, 'S')
         case 'D' => Position(this.x, this.y, 'N')
       }
+      // TODO: Exception throw
     }
   }
 
