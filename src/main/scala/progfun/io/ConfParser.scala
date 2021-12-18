@@ -27,7 +27,6 @@ object ConfParser {
 
   /**
    * Parse the mower with recursive call.
- *
    * @param conf the configuration to parse as list of strings for each line.
    * @param land the Land to use by the Mowers.
    * @param acc the list of Mowers to return.
