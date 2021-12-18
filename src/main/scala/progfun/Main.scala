@@ -1,6 +1,6 @@
 package progfun
 
-import progfun.io.{ConfLoader, ConfParser, JsonWriter}
+import progfun.io.{ConfLoader, ConfParser, FileWriter, JsonWriter}
 
 object Main extends App {
   println("Mower program")
@@ -21,7 +21,8 @@ object Main extends App {
   val movedMowers = mowers.map(mower => mower.run)
   println(movedMowers)
 
-  // Print json
+  // Build json
   val json = JsonWriter.toJson(land, mowers, movedMowers)
   println(json)
+  FileWriter.write( "./mowers.json", json)
 }
