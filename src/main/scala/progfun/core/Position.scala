@@ -1,7 +1,10 @@
 package progfun.core
 
+import progfun.exceptions.InvalidPositionException
+
 /**
  * Position of a Mower in the land.
+ *
  * @param x X coordinate of the position.
  * @param y Y coordinate of the position.
  * @param direction Direction of the mower.
@@ -31,8 +34,9 @@ case class Position (x: Int, y: Int, direction: Char) {
         case 'G' => Position(this.x, this.y, 'S')
         case 'D' => Position(this.x, this.y, 'N')
       }
-      // TODO: Exception throw
+      case _ => throw InvalidPositionException(s"Invalid direction : ${this.direction}")
     }
+
   }
 
   /**
@@ -46,6 +50,8 @@ case class Position (x: Int, y: Int, direction: Char) {
       case 'E' => Position(this.x + 1, this.y, this.direction)
       case 'S' => Position(this.x, this.y - 1, this.direction)
       case 'W' => Position(this.x - 1, this.y, this.direction)
+      // else ignore and return throw InvalidPositionException("Invalid direction : ???")
+      case _ => throw InvalidPositionException(s"Invalid direction : ${this.direction}")
     }
     if (land.isValidPosition(newPosition)) {
       newPosition

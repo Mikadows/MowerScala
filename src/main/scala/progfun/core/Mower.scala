@@ -1,5 +1,7 @@
 package progfun.core
 
+import progfun.exceptions.InvalidActionException
+
 case class Mower (
   position: Position,
   actions: List[Char],
@@ -25,6 +27,7 @@ case class Mower (
   private def doAction(action: Char): Position = action match {
       case 'A' => this.position.move(this.land)
       case 'G' | 'D' => this.position.turn(action)
-    }
+      case _ => throw InvalidActionException(s"Invalid action : $action")
+  }
 
 }

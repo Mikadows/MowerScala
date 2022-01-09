@@ -23,8 +23,8 @@ lazy val root = (project in file("."))
       scalaTest  % Test
     ),
     // Wartremover
-    wartremoverWarnings ++= Warts.unsafe,
-    wartremoverErrors ++= Warts.unsafe
+//    wartremoverWarnings ++= Warts.unsafe,
+//    wartremoverErrors ++= Warts.unsafe
   )
   
 
