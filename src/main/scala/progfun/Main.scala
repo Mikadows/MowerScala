@@ -5,10 +5,6 @@ import progfun.io.{ConfLoader, ConfParser, FileWriter, JsonWriter}
 object Main extends App {
   println("Mower program")
 
-  /**
-   * May refactor to use for comprehension
-   */
-
   // Load configuration
   val config = ConfLoader.load("./config.txt")
   // Get Land from configuration
